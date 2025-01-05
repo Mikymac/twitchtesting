@@ -7,9 +7,13 @@
 <script>
 function random(){
     let r = document.getElementsByClassName("message");
-
+    document.body.style.zoom="90%";
     for (let i = 0; i < r.length; i++) {
         r[i].style.setProperty('--placement', String(Math.floor(Math.random() * 80) + 10) + '%');
+}
+
+function randomDelay(string ){
+
 }
 }
 
@@ -18,8 +22,21 @@ function random(){
 <body onload="random()">
 
 <div class="main-container" >
+    <div class="msg_overflow_fix">.</div>
+    <div class="msg_overflow_fix">.</div>
+    <div class="msg_overflow_fix">.</div>
  <div class="msg follower" data-sender="2" data-msgid="3" id="msg-4"  >
  <div class="meta">
+    <div class="container">
+        <div class="box green" style="background-color:blackl; animation: rotate 50s linear infinite;"> 
+            <div class="side side--front" style="--multiplier: -2"></div>
+            <div class="side side--front"></div>
+            <div class="side side--left" style="--multiplier: -2;"></div>
+            <div class="side side--left"></div>
+            <div class="side side--top" style="--multiplier: -2"></div>
+            <div class="side side--top"></div>
+        </div>
+    </div>
  <div class="name">EnpyViewer</div>
  </div>
  <div class="message">This is a test message</div>
@@ -30,6 +47,16 @@ function random(){
 
  <div class="msg subscriber" data-sender="2" data-msgid="3" id="msg-4">
  <div class="meta">
+    <div class="container">
+        <div class="box purple" style="background-color:blackl; animation: rotate 50s linear infinite;"> 
+            <div class="side side--front" style="--multiplier: -2"></div>
+            <div class="side side--front"></div>
+            <div class="side side--left" style="--multiplier: -2;"></div>
+            <div class="side side--left"></div>
+            <div class="side side--top" style="--multiplier: -2"></div>
+            <div class="side side--top"></div>
+        </div>
+    </div>
  <div class="name">EnpySubscriber</div>
  </div>
  <div class="message">This is a test message</div>
@@ -37,7 +64,16 @@ function random(){
 
 
  <div class="msg vip" data-sender="2" data-msgid="3" id="msg-4">
- <div class="meta">
+ <div class="meta"><div class="container" style="transform: scale(-1, 1);">
+    <div class="box purple" style="background-color:blackl; animation: rotate 50s linear infinite;"> 
+        <div class="side side--front" style="--multiplier: -2"></div>
+        <div class="side side--front"></div>
+        <div class="side side--left" style="--multiplier: -2;"></div>
+        <div class="side side--left"></div>
+        <div class="side side--top" style="--multiplier: -2"></div>
+        <div class="side side--top"></div>
+    </div>
+</div>
  <div class="name">EnpyVip</div>
  </div>
  <div class="message">This is a test message</div>
@@ -45,6 +81,16 @@ function random(){
 
  <div class="msg mod" data-sender="2" data-msgid="3" id="msg-4">
  <div class="meta">
+    <div class="container" style="transform: scale(-1, 1);">
+        <div class="box green" style="background-color:blackl; animation: rotate 50s linear infinite;"> 
+            <div class="side side--front" style="--multiplier: -2"></div>
+            <div class="side side--front"></div>
+            <div class="side side--left" style="--multiplier: -2;"></div>
+            <div class="side side--left"></div>
+            <div class="side side--top" style="--multiplier: -2"></div>
+            <div class="side side--top"></div>
+        </div>
+    </div>
  <div class="name">EnpyMod</div>
  </div>
  <div class="message">This is a test message</div>
@@ -60,16 +106,17 @@ function random(){
 <div class="msg any" data-sender="2" data-msgid="3" id="msg-">
  <div class="meta">
 
-    <div class="container" style="animation: rotate 50s linear infinite; ">
-        <div class="box">
-           <div class="side side--front"></div>
-           <div class="side side--left"></div>
-           <div class="side side--top"></div>
+    <div class="container" >
+        <div class="box green" style="background-color:blackl; animation: rotate 50s linear infinite;"> 
+            <div class="side side--front" style="--multiplier: -2"></div>
+            <div class="side side--front"></div>
+            <div class="side side--left" style="--multiplier: -2;"></div>
+            <div class="side side--left"></div>
+            <div class="side side--top" style="--multiplier: -2"></div>
+            <div class="side side--top"></div>
         </div>
-       </div> 
-
- 
-           <div class="name" style="z-index: -10;   transform: rotateY(0) translateZ(50px);">EnpyAny</div>
+    </div>
+    <div class="name">EnpyAny</div>
  </div>
  <div class="message">This is a test message</div>
 <div class="msg_overflow_fix"></div></div>
@@ -78,21 +125,15 @@ function random(){
 <div style="padding-left: 100px;">
     <div class="container">
         <div class="box">
-            <div class="side side--front">
-                 <img src="" -->
-                <!-- <button> HOME </button>
-                <button> ABOUT </button>
-                <button> CONTACT </button>
-                <button> SHOP </button> -->
-            </div>
+            <div class="side side--front"></div>
             <div class="side side--left"></div>
             <div class="side side--top"></div>
         </div>
-    </div>
+    
     </div>
     <div style="padding-left: 100px;"></div>
-        <div class="container" > <!-- style="animation: rotate 50s linear infinite"> -->
-            <div class="box" style="animation: rotate 10s linear infinite; transform-origin: 0% 0%;">
+        <div class="container" >
+            <div class="box purple" style="animation: rotate 40s linear infinite">
                 <div class="side side--front" style="--multiplier: -2"></div>
                 <div class="side side--front"></div>
                 <div class="side side--left" style="--multiplier: -2;"></div>
@@ -101,7 +142,29 @@ function random(){
                 <div class="side side--top"></div>
             </div>
         </div>
+    <div style="padding-left: 100px;"></div>
+    <div class="container" >
+        <div class="box green" style="animation: rotate 30s linear infinite">
+            <div class="side side--front" style="--multiplier: -2"></div>
+            <div class="side side--front"></div>
+            <div class="side side--left" style="--multiplier: -2;"></div>
+            <div class="side side--left"></div>
+            <div class="side side--top" style="--multiplier: -2"></div>
+            <div class="side side--top"></div>
         </div>
+    </div>
+    <div style="padding-left: 100px;"></div>
+    <div class="container" >
+        <div class="box purple" style="animation: rotate 20s linear infinite">
+            <div class="side side--front" style="--multiplier: -2"></div>
+            <div class="side side--front"></div>
+            <div class="side side--left" style="--multiplier: -2;"></div>
+            <div class="side side--left"></div>
+            <div class="side side--top" style="--multiplier: -2"></div>
+            <div class="side side--top"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html> 
 
