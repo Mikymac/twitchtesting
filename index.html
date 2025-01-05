@@ -1,0 +1,108 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="cssEdits.css">
+</head>
+
+<script>
+function random(){
+    let r = document.getElementsByClassName("message");
+
+    for (let i = 0; i < r.length; i++) {
+        r[i].style.setProperty('--placement', String(Math.floor(Math.random() * 80) + 10) + '%');
+}
+}
+
+</script>
+
+<body onload="random()">
+
+<div class="main-container" >
+ <div class="msg follower" data-sender="2" data-msgid="3" id="msg-4"  >
+ <div class="meta">
+ <div class="name">EnpyViewer</div>
+ </div>
+ <div class="message">This is a test message</div>
+<div class="msg_overflow_fix"></div></div>
+
+
+
+
+ <div class="msg subscriber" data-sender="2" data-msgid="3" id="msg-4">
+ <div class="meta">
+ <div class="name">EnpySubscriber</div>
+ </div>
+ <div class="message">This is a test message</div>
+<div class="msg_overflow_fix"></div></div>
+
+
+ <div class="msg vip" data-sender="2" data-msgid="3" id="msg-4">
+ <div class="meta">
+ <div class="name">EnpyVip</div>
+ </div>
+ <div class="message">This is a test message</div>
+<div class="msg_overflow_fix"></div></div>
+
+ <div class="msg mod" data-sender="2" data-msgid="3" id="msg-4">
+ <div class="meta">
+ <div class="name">EnpyMod</div>
+ </div>
+ <div class="message">This is a test message</div>
+<div class="msg_overflow_fix"></div></div>
+
+ <div class="msg vip2" data-sender="2" data-msgid="3" id="msg-4">
+ <div class="meta">
+ <div class="name">EnpyVip</div>
+ </div>
+ <div class="message">This is a test message</div>
+<div class="msg_overflow_fix"></div></div>
+
+<div class="msg any" data-sender="2" data-msgid="3" id="msg-">
+ <div class="meta">
+
+    <div class="container" style="animation: rotate 50s linear infinite; ">
+        <div class="box">
+           <div class="side side--front"></div>
+           <div class="side side--left"></div>
+           <div class="side side--top"></div>
+        </div>
+       </div> 
+
+ 
+           <div class="name" style="z-index: -10;   transform: rotateY(0) translateZ(50px);">EnpyAny</div>
+ </div>
+ <div class="message">This is a test message</div>
+<div class="msg_overflow_fix"></div></div>
+</div>
+
+<div style="padding-left: 100px;">
+    <div class="container">
+        <div class="box">
+            <div class="side side--front">
+                 <img src="" -->
+                <!-- <button> HOME </button>
+                <button> ABOUT </button>
+                <button> CONTACT </button>
+                <button> SHOP </button> -->
+            </div>
+            <div class="side side--left"></div>
+            <div class="side side--top"></div>
+        </div>
+    </div>
+    </div>
+    <div style="padding-left: 100px;"></div>
+        <div class="container" > <!-- style="animation: rotate 50s linear infinite"> -->
+            <div class="box" style="animation: rotate 10s linear infinite; transform-origin: 0% 0%;">
+                <div class="side side--front" style="--multiplier: -2"></div>
+                <div class="side side--front"></div>
+                <div class="side side--left" style="--multiplier: -2;"></div>
+                <div class="side side--left"></div>
+                <div class="side side--top" style="--multiplier: -2"></div>
+                <div class="side side--top"></div>
+            </div>
+        </div>
+        </div>
+</body>
+</html> 
+
+<!-- <div class="msg " + _0x5950ee + "" data-sender="" + _0x8652ca + "" data-msgid="" + _0x2202ac + "" id="msg-" + totalMessages + ""> -->

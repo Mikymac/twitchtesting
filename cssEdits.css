@@ -1,0 +1,360 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+:root {
+  --folCol: #eee;
+  --subCol: #22FF12;
+  --vipCol: #22FF12;
+  --modCol: #ea63e3;
+}
+
+* {
+  font-family: "Monomaniac One", sans-serif;
+  overflow: visible;
+}
+
+body {
+  width: 45%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: visible;
+  width: 100%;
+  background: #fdc71c;
+}
+
+.msg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  width: 100%;
+  min-height: 60px
+}
+
+.msg_overflow_fix {
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible!important;
+}
+
+.emote {
+  height: 36px;
+  min-width: 36px;
+}
+
+.meta {
+  position: relative;
+  background: var(--folCol);
+  width: fit-content;
+  border-radius: 5px;
+  padding: 2px 15px;
+  margin-bottom: 4px;
+  z-index: 10;
+  clip-path: polygon(
+    calc(0% + 1vw) 0, /* left top */
+    100% 0, /* right top */ 
+    calc(100% - 1vw) 100%, /* right bottom */
+    0 100% /* left bottom */
+  );
+}
+
+.name {
+  color: #101010;
+  text-transform: uppercase;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  margin-bottom: 2px;
+  max-width: 375px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.meta::after {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  left: 30px;
+  width: 24px;
+  height: 12px;
+  background: var(--folCol);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  
+}
+
+.message {
+  position: relative;
+  background-color: #101010;
+  padding: 4px 20px 15px 20px;
+  /* border-radius: 5px;  */
+  color: var(--folCol);
+  font-size: 22px;
+  font-family: 'Play', sans-serif;
+  height: fit-content;
+  box-sizing: border-box;
+  word-break: normal;
+  word-wrap: break-word;
+  max-width: 80%;
+  align-self: flex-start;
+  overflow: visible;
+
+  --placement: 50%;
+
+  clip-path: polygon(
+
+    calc(0% + 1vw) 0, 
+    100% 0, 
+    calc(100% - 1vw) calc(100% - 10px), 
+    calc(var(--placement) - 5%) calc(100% - 10px),
+    var(--placement) 100%,
+    calc(var(--placement) + 5%) calc(100% - 10px),
+    0% calc(100% - 10px)
+
+    
+  );
+}
+
+.message::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -4px;
+  background: var(--folCol);
+  /* border-radius: 5px; */
+  width: 25px;
+  height: 100%;
+  z-index: -2; 
+
+  clip-path: polygon(
+    calc(0% + 1vw) 0, 
+    100% 0, 
+    calc(100% - 1vw) calc(100% - 10px), 
+    0 calc(100% - 10px) 
+  );
+}
+
+.subscriber .meta {
+  background: var(--subCol);
+}
+
+.subscriber .meta::after {
+  background: var(--subCol);
+}
+
+.subscriber .message::after {
+  background: var(--subCol);
+}
+
+.subscriber .message {
+  color: var(--subCol);
+  max-width: 80%;
+}
+
+.mod .meta {
+  background: var(--modCol);
+  align-self: flex-end;
+}
+
+.mod .meta::after {
+  background: var(--modCol);
+  left: unset;
+  right: 27px;
+}
+
+.mod .message {
+  color: var(--modCol);
+  max-width: 80%;
+  margin-left: 4px;
+  align-self: flex-end;
+}
+
+.mod .message::after {
+  left: -4px;
+  background: var(--modCol);
+  z-index: -1;
+}
+
+.vip .meta {
+  background: var(--vipCol);
+  align-self: flex-end;
+}
+
+.vip .meta::after {
+  background: var(--vipCol);
+  left: unset;
+  right: 27px;
+}
+
+.vip .message {
+  color: var(--vipCol);
+  max-width: 80%;
+  margin-left: 4px;
+  align-self: flex-end;
+}
+
+.vip .message::after {
+  left: -4px;
+  background: var(--vipCol);
+}
+
+
+.vip2 .meta {
+  background: #fd975c;
+  align-self: flex-end;
+}
+
+.vip2 .meta::after {
+  background: #fd975c;
+  left: unset;
+  right: 27px;
+}
+
+.vip2 .message {
+  color: var(--folCol);
+  max-width: 80%;
+  margin-left: 4px;
+  align-self: flex-end;
+}
+
+.vip2 .message::after {
+  left: -4px;
+  background: #fd975c;
+}
+
+
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+.container {
+  padding: 0;
+  background-color: #ea63e3;
+  /* width: 200px;
+  height: 200px; */
+  /* perspective: 700px; */
+  /* margin: 70px auto; */
+  /* animation: rotate 5s linear infinite; */
+  /* animation-delay: 0ms; */
+}
+.box {
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  transform: rotateX(-20deg) rotateY(30deg);
+}
+.side {
+  --dimension: 50px;
+  position: absolute;
+  width: var(--dimension);
+  height: var(--dimension);
+  background-color: rgba(30,67,125,.5);
+  border-color: #101010;
+  /* border-style: ridge; */
+}
+.side--front {
+  --multiplier: 2;
+  transform: rotateY(0) translateZ(calc(var(--dimension) / var(--multiplier)));
+  background-color: #22FE11;
+}
+.side--left {
+  --multiplier: 2;
+  transform: rotateY(-90deg) translateZ(calc(var(--dimension) / var(--multiplier)));
+  background-color: #117109;
+}
+.side--top {
+  --multiplier: 2;
+  transform: rotateX(90deg) translateZ(calc(var(--dimension) / var(--multiplier)));
+  background-color: #17C00E;
+}
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  /* padding: 0; */
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+
+  width: 100%;
+  font-size: 1.5vw;
+  transition: .5s;
+  transform-origin: left;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 0%;
+  /* animation: float 10s infinite; */
+}
+button:hover {
+  padding-right: 20px;
+  text-align: right;
+  color: #eee;
+  background-color: #101010;
+}
+.shape {
+  width: 400px;
+  height: 500px;
+  position: absolute;
+  left: -300px;
+  top: -80px;
+  background-color: black;
+  z-index: -10;
+  transition: 1s;
+}
+
+@keyframes rotate {
+  0% {
+    /* transform: rotateX(-20deg) rotateY(30deg); */
+    transform: rotatex(-20deg) rotateY(30deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(160deg) rotateY(210deg) rotateZ(180deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(30deg) rotateZ(360deg);
+  }
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0) rotateX(0);
+  }
+  50% {
+      transform: translateY(-20px) rotateX(3deg);
+  }
+  100% {
+      transform: translateY(0) rotateX(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
