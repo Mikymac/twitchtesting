@@ -59,6 +59,7 @@ body {
 
 .meta {
   position: relative;
+  -webkit-text-stroke: 0.78px var(--folCol);
   background: var(--folCol);
   width: fit-content;
   border-radius: 5px;
@@ -75,6 +76,7 @@ body {
 
 .name {
   color: #101010;
+  -webkit-text-stroke: 0.78px inherit;
   text-transform: uppercase;
   width: fit-content;
   font-weight: 400;
@@ -173,6 +175,7 @@ body {
 
 .subscriber .meta {
   background: var(--subCol);
+  -webkit-text-stroke: 0.78px var(--subCol);
 }
 
 .subscriber .meta::after {
@@ -190,6 +193,7 @@ body {
 
 .mod .meta {
   background: var(--modCol);
+  -webkit-text-stroke: 0.78px var(--modCol);
   align-self: flex-end;
 }
 
@@ -214,6 +218,7 @@ body {
 
 .vip .meta {
   background: var(--vipCol);
+  -webkit-text-stroke: 0.78px var(--vipCol);
   align-self: flex-end;
 }
 
@@ -238,6 +243,7 @@ body {
 
 .vip2 .meta {
   background: #fd975c;
+  -webkit-text-stroke: 0.78px #fd975c;
   align-self: flex-end;
 }
 
