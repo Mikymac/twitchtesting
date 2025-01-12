@@ -107,7 +107,7 @@ body {
   padding: 4px 20px 15px 20px;
   /* border-radius: 5px;  */
   color: var(--folCol);
-  font-size: 22px;
+  font-size: 2.25vh;
   font-family: 'Play', sans-serif;
   height: fit-content;
   box-sizing: border-box;
@@ -384,11 +384,11 @@ body {
 
     calc(0% + 1vw) 3%, 
     calc(100% - 0.33vw) 0, 
-    calc(100% - 1vw) calc(100% - 10px), 
+    calc(100% - 1vw) calc(100% - 1vh), 
     calc(var(--placement) + 5%) calc(95% - 4px),
     var(--placement) 100%,
     calc(var(--placement) - 5%) calc(95% - 4px),
-    0% calc(100% - 10px)
+    0% calc(100% - 1vh)
   );
   }
   25% {
@@ -396,11 +396,11 @@ body {
 
     calc(0% + 1vw) 0, 
     100% 0.33vw, 
-    calc(100% - 0.6vw) calc(95% - 10px), 
+    calc(100% - 0.6vw) calc(95% - 1vh), 
     calc(var(--placement) + 5%) calc(95% - 4px),
     var(--placement) 100%,
     calc(var(--placement) - 5%) calc(95% - 4px),
-    2% calc(100% - 10px)
+    2% calc(100% - 1vh)
   );
   }
   75% {
@@ -408,11 +408,11 @@ body {
 
     calc(0% + 1vw) 0, 
     100% 0, 
-    calc(100% - 1vw) calc(100% - 10px), 
+    calc(100% - 1vw) calc(100% - 1vh), 
     calc(var(--placement) + 5%) calc(95% - 4px),
     var(--placement) 100%,
     calc(var(--placement) - 5%) calc(95% - 4px),
-    4% calc(110% - 10px)
+    4% calc(110% - 1vh)
   );
   }
   100% {
@@ -420,11 +420,11 @@ body {
 
     calc(0% + 1vw) 0, 
     calc(100% - 0.33vw) 0, 
-    calc(100% - 1vw) calc(100% - 10px), 
+    calc(100% - 1vw) calc(100% - 1vh), 
     calc(var(--placement) + 5%) calc(95% - 4px),
     var(--placement) 100%,
     calc(var(--placement) - 5%) calc(95% - 4px),
-    0% calc(100% - 10px)
+    0% calc(100% - 1vh)
   );
   }
 }
