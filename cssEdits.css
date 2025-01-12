@@ -341,29 +341,28 @@ body {
 @keyframes wobble {
   0% {
     clip-path: polygon(
-
-    calc(0% + 1vw) 3%, 
-    calc(100% - 0.33vw) 0, 
-    calc(100% - 1vw) 3.6vh, 
-    0% 3.6vh
+      calc(0% + 1vw) 0, 
+      calc(100% - 0.33vw) 0, 
+      calc(100% - 1vw) calc(100% - 2vh), 
+      0% calc(100% - 2vh)
   );
   }
   25% {
     clip-path: polygon(
 
-    calc(0% + 1vw) 0, 
+    calc(0% + 1vw) 3%, 
     100% 0.33vw, 
-    calc(100% - 0.6vw) calc(3.6vh - 5%), 
-    2% 3.6vh
+    calc(100% - 0.6vw) calc(95% - 2vh), 
+    2% calc(100% - 2vh)
   );
   }
   75% {
     clip-path: polygon(
 
-    calc(0% + 1vw) 0, 
+    calc(0% + 1vw) 3%, 
     100% 0, 
-    calc(100% - 1vw) 3.6vh, 
-    4% calc(3.6vh + 10%)
+    calc(100% - 1vw) calc(100% - 2vh), 
+    4% calc(110% - 2vh)
   );
   }
   100% {
@@ -371,11 +370,12 @@ body {
 
     calc(0% + 1vw) 0, 
     calc(100% - 0.33vw) 0, 
-    calc(100% - 1vw) 3.6vh, 
-    0% 3.6vh
+    calc(100% - 1vw) calc(100% - 2vh), 
+    0% calc(100% - 2vh)
   );
   }
 }
+
 /*
  calc(0% + 1vw) 0, 
     100% 0, 
@@ -392,11 +392,11 @@ body {
     clip-path: polygon(
       calc(0% + 1vw) 0, 
       calc(100% - 0.33vw) 0, 
-      calc(100% - 1vw) 3.6vh, 
-      calc(var(--placement) + 15%) 3.6vh, 
+      calc(100% - 1vw) calc(100% - 2vh), 
+      calc(var(--placement) + 15%) calc(100% - 2vh), 
       var(--placement) 100%,
-      calc(var(--placement) + 5%) 3.6vh, 
-      0% 3.6vh
+      calc(var(--placement) + 5%) calc(100% - 2vh), 
+      0% calc(100% - 2vh)
   );
   }
   25% {
@@ -404,11 +404,11 @@ body {
 
     calc(0% + 1vw) 3%, 
     100% 0.33vw, 
-    calc(100% - 0.6vw) calc(3.6vh - 5%), 
-    calc(var(--placement) + 15%) calc(3.6vh - 2.5%), 
+    calc(100% - 0.6vw) calc(95% - 2vh), 
+    calc(var(--placement) + 15%) calc(97.5% - 2vh), 
     var(--placement) 100%,
-    calc(var(--placement) + 5%) calc(3.6vh - 2.5%), 
-    2% 3.6vh
+    calc(var(--placement) + 5%) calc(97.5% - 2vh), 
+    2% calc(100% - 2vh)
   );
   }
   75% {
@@ -416,11 +416,11 @@ body {
 
     calc(0% + 1vw) 3%, 
     100% 0, 
-    calc(100% - 1vw) 3.6vh, 
-    calc(var(--placement) + 15%) calc(3.6vh + (var(--placement) + 15%) / 10), 
+    calc(100% - 1vw) calc(100% - 2vh), 
+    calc(var(--placement) + 15%) calc(105% - 2vh), 
     var(--placement) 100%,
-    calc(var(--placement) + 5%) calc(3.6vh + 5%), 
-    4% calc(3.6vh + 10%)
+    calc(var(--placement) + 5%) calc(105% - 2vh), 
+    4% calc(110% - 2vh)
   );
   }
   100% {
@@ -428,11 +428,11 @@ body {
 
     calc(0% + 1vw) 0, 
     calc(100% - 0.33vw) 0, 
-    calc(100% - 1vw) 3.6vh, 
-    calc(var(--placement) + 15%) 3.6vh, 
+    calc(100% - 1vw) calc(100% - 2vh), 
+    calc(var(--placement) + 15%) calc(100% - 2vh), 
     var(--placement) 100%,
-    calc(var(--placement) + 5%) 3.6vh, 
-    0% 3.6vh
+    calc(var(--placement) + 5%) calc(100% - 2vh), 
+    0% calc(100% - 2vh)
   );
   }
 }
