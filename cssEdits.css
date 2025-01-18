@@ -41,7 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   width: 100%;
   min-height: 60px
 }
@@ -49,7 +49,7 @@ body {
 .msg_overflow_fix {
   flex-shrink: 0;
   position: relative;
-  overflow: visible!important;
+  overflow: visible !important;
 }
 
 .emote {
@@ -58,25 +58,24 @@ body {
 }
 
 .meta {
-  position: relative;
-  -webkit-text-stroke: 0.78px var(--folCol);
   background: var(--folCol);
   width: fit-content;
   border-radius: 5px;
   padding: 2px 15px;
   margin-bottom: 4px;
-  z-index: 10;
-  clip-path: polygon(
-    calc(0% + 1vw) 0, /* left top */
-    100% 0, /* right top */ 
-    calc(100% - 1vw) 100%, /* right bottom */
-    0 100% /* left bottom */
-  );
+  clip-path: polygon(calc(0% + 1vw) 0,
+      /* left top */
+      100% 0,
+      /* right top */
+      calc(100% - 1vw) 100%,
+      /* right bottom */
+      0 100%
+      /* left bottom */
+    );
 }
 
 .name {
   color: #101010;
-  -webkit-text-stroke: 0.78px inherit;
   text-transform: uppercase;
   width: fit-content;
   font-weight: 400;
@@ -85,7 +84,6 @@ body {
   margin-bottom: 2px;
   max-width: 375px;
   text-overflow: ellipsis;
-  overflow: hidden;
   transform: translateZ(50px);
 }
 
@@ -121,21 +119,16 @@ body {
 
   --placement: 50%;
 
-  clip-path: polygon(
-
-    calc(0% + 1vw) 0, 
-    100% 0, 
-    calc(100% - 1vw) 3.6vh, 
-    calc(var(--placement) + 15%) 3.6vh, 
-    var(--placement) 100%,
-    calc(var(--placement) + 5%) 3.6vh, 
-    0% 3.6vh
-
-    
-  );
+  clip-path: polygon(calc(0% + 1vw) 0,
+      100% 0,
+      calc(100% - 1vw) 3.6vh,
+      calc(var(--placement) + 15%) 3.6vh,
+      var(--placement) 100%,
+      calc(var(--placement) + 5%) 3.6vh,
+      0% 3.6vh);
 }
 
-.message::after{
+.message::after {
   position: relative;
   background-color: #101010;
   height: fit-content;
@@ -170,7 +163,7 @@ body {
     calc(100% - 1vw) calc(100% - 10px), 
     0 calc(100% - 10px) 
   );
-} */ 
+} */
 
 
 .subscriber .meta {
@@ -269,13 +262,16 @@ body {
   justify-content: right;
   padding: 0;
 }
+
 .box {
-  width: 100%;
-  height: 100%;
-  transform: translateX(-50%) translateY(-50%);
+  /* width: 100%;
+  height: 100%; */
+  /* transform: translateX(-50%) translateY(-50%); */
+  position: absolute;
   transform-style: preserve-3d;
 }
-.green{
+
+.green {
   /* --top: #17C011;
   --left: #177111;
   --front: #17FF11; */
@@ -285,7 +281,8 @@ body {
   background-color: #17C011;
   border-color: #101010;
 }
-.purple{
+
+.purple {
   /* --top: #BB01AB;
   --left: #900080;
   --front: #FF00E2; */
@@ -295,23 +292,106 @@ body {
   background-color: #900080;
   border-color: #4a4a4a;
 }
-.side {
-  border:#3a3a3a;
+
+.box--positioner {
+  transform-origin: center;
+  scale: .7;
+  align-self: flex-end;
+  position: absolute;
+  padding: 2px 15px;
+  transform: translateX(-55%) translateY(7px);
+  overflow: visible;
+  color: transparent;
+  background-color: transparent;
+  text-transform: uppercase;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  margin-bottom: 2px;
+  max-width: 375px;
+}
+
+.subscriber .box--positioner {
+  align-self: flex-start;
+  position: absolute;
+  transform: translateX(55%) translateY(7px);
+}
+
+.box--container {
+  --dimension: 40px;
+
+  position: absolute;
+  transform-style: preserve-3d;
+  top: calc((var(--dimension) / 4) *-1);
+  left: calc(var(--dimension)/2);
+
+  animation: spin 10s linear infinite;
+}
+
+.subscriber .box--container {  
+  left: calc(100% - (var(--dimension)/2));
+}
+
+.face {
+  width: var(--dimension);
+  height: var(--dimension);
+  border: #3a3a3a;
   border-style: solid;
   border-radius: 3%;
-  box-sizing: border-box;  
+  box-sizing: border-box;
   display: grid;
   grid-template-areas:
-      ". . . . . . ."  
-      ". a . . . c ."  
-      ". . . . . . ."  
-      ". e . g . f ."  
-      ". . . . . . ."  
-      ". d . . . b ."  
-      ". . . . . . .";      
-	grid-template-rows: repeat(7, 1fr);
-	grid-template-columns: repeat(7, 1fr);
-  
+    ". . . . . . ."
+    ". a . . . c ."
+    ". . . . . . ."
+    ". e . g . f ."
+    ". . . . . . ."
+    ". d . . . b ."
+    ". . . . . . .";
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+  align-self: center;
+  justify-self: center;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.face--front {
+  --multiplier: 2;
+  transform: rotateY(0) translateX(-25px) translateZ(calc((var(--dimension) - 1px) / var(--multiplier)));
+  background-color: var(--front);
+}
+
+.face--left {
+  --multiplier: 2;
+  transform: rotateY(-90deg) translateZ(calc(((var(--dimension) - 1px) / var(--multiplier) + 25px)));
+  background-color: var(--left);
+}
+
+.face--top {
+  --multiplier: 2;
+  transform: rotateX(90deg) translateX(-25px) translateZ(calc((var(--dimension) - 1px) / var(--multiplier)));
+  background-color: var(--top);
+}
+
+.side {
+  border: #3a3a3a;
+  border-style: solid;
+  border-radius: 3%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas:
+    ". . . . . . ."
+    ". a . . . c ."
+    ". . . . . . ."
+    ". e . g . f ."
+    ". . . . . . ."
+    ". d . . . b ."
+    ". . . . . . .";
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+
   align-items: center;
   justify-content: center;
   /* justify-content: space-between; */
@@ -320,53 +400,63 @@ body {
   width: 50px;
   height: 50px;
   display: grid;
-	margin: 16px;
+  margin: 16px;
 }
+
 .side--front {
   --multiplier: 2;
   transform: rotateY(0) translateZ(calc(var(--dimension) / var(--multiplier)));
   background-color: var(--front);
 }
+
 .side--left {
   --multiplier: 2;
   transform: rotateY(-90deg) translateZ(calc(var(--dimension) / var(--multiplier)));
   background-color: var(--left);
 }
+
 .side--top {
   --multiplier: 2;
   transform: rotateX(90deg) translateZ(calc(var(--dimension) / var(--multiplier)));
   background-color: var(--top);
 }
-.side--pip{
+
+.side--pip {
   border-style: none;
   display: block;
-	align-self: center;
-	justify-self: center;
-	width: 12px;
-	height: 12px;
-	border-radius: 50%;
-	/* background-color: #333; */
-	/* box-shadow: inset 0 3px #111, inset 0 -3px #555; */
+  align-self: center;
+  justify-self: center;
+  width: calc(var(--dimension) / 6);
+  height: calc(var(--dimension) / 6);
+  border-radius: 50%;
+  /* background-color: #333; */
+  /* box-shadow: inset 0 3px #111, inset 0 -3px #555; */
   grid-area: a;
   background-color: #4a4a4a;
 }
-.side--pip:nth-child(2){
+
+.side--pip:nth-child(2) {
   grid-area: b;
 }
+
 .side--pip:nth-child(3) {
-    grid-area: c;
+  grid-area: c;
 }
+
 .side--pip:nth-child(4) {
-    grid-area: d;
+  grid-area: d;
 }
+
 .side--pip:nth-child(5) {
-    grid-area: e;
+  grid-area: e;
 }
+
 .side--pip:nth-child(6) {
-    grid-area: f;
+  grid-area: f;
 }
+
 .side--pip:nth-child(odd):last-child {
-    grid-area: g;
+  grid-area: g;
 }
 
 .shape {
@@ -387,10 +477,12 @@ body {
     /* transform: translateX(-50%) translateY(-50%); */
     transform: rotatex(20deg) rotateY(30deg) rotateZ(0deg);
   }
+
   50% {
     /* transform: translateX(50%) translateY(-50%); */
     transform: rotateX(160deg) rotateY(210deg) rotateZ(180deg);
   }
+
   100% {
     transform: rotateX(-20deg) rotateY(30deg) rotateZ(360deg);
     /* transform: translateX(-50%) translateY(-50%); */
@@ -398,53 +490,58 @@ body {
   }
 }
 
-@keyframes float {
+@keyframes spin {
   0% {
-      transform: translateY(0) rotateX(0);
+    transform: rotatex(0deg) rotateY(0deg) rotateZ(0deg);
   }
-  50% {
-      transform: translateY(-20px) rotateX(3deg);
-  }
+
   100% {
-      transform: translateY(0) rotateX(0);
+    transform: rotatex(0deg) rotateY(360deg) rotateZ(0deg);
   }
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotateX(0);
+  }
+
+  50% {
+    transform: translateY(-20px) rotateX(3deg);
+  }
+
+  100% {
+    transform: translateY(0) rotateX(0);
+  }
+}
+
 /* 2.25vh; */
 @keyframes wobble {
   0% {
-    clip-path: polygon(
-      calc(0% + 1vw) 0, 
-      calc(100% - 0.33vw) 0, 
-      calc(100% - 1vw) calc(100% - 2vh), 
-      0% calc(100% - 2vh)
-  );
+    clip-path: polygon(calc(0% + 1vw) 0,
+        calc(100% - 0.33vw) 0,
+        calc(100% - 1vw) calc(100% - 2vh),
+        0% calc(100% - 2vh));
   }
+
   25% {
-    clip-path: polygon(
-
-    calc(0% + 1vw) 3%, 
-    100% 0.33vw, 
-    calc(100% - 0.6vw) calc(95% - 2vh), 
-    2% calc(100% - 2vh)
-  );
+    clip-path: polygon(calc(0% + 1vw) 3%,
+        100% 0.33vw,
+        calc(100% - 0.6vw) calc(95% - 2vh),
+        2% calc(100% - 2vh));
   }
+
   75% {
-    clip-path: polygon(
-
-    calc(0% + 1vw) 3%, 
-    100% 0, 
-    calc(100% - 1vw) calc(100% - 2vh), 
-    4% calc(110% - 2vh)
-  );
+    clip-path: polygon(calc(0% + 1vw) 3%,
+        100% 0,
+        calc(100% - 1vw) calc(100% - 2vh),
+        4% calc(110% - 2vh));
   }
-  100% {
-    clip-path: polygon(
 
-    calc(0% + 1vw) 0, 
-    calc(100% - 0.33vw) 0, 
-    calc(100% - 1vw) calc(100% - 2vh), 
-    0% calc(100% - 2vh)
-  );
+  100% {
+    clip-path: polygon(calc(0% + 1vw) 0,
+        calc(100% - 0.33vw) 0,
+        calc(100% - 1vw) calc(100% - 2vh),
+        0% calc(100% - 2vh));
   }
 }
 
@@ -461,62 +558,42 @@ body {
 
 @keyframes wobbleTagged {
   0% {
-    clip-path: polygon(
-      calc(0% + 1vw) 0, 
-      calc(100% - 0.33vw) 0, 
-      calc(100% - 1vw) calc(100% - 2vh), 
-      calc(var(--placement) + 15%) calc(100% - 2vh), 
-      var(--placement) 100%,
-      calc(var(--placement) + 5%) calc(100% - 2vh), 
-      0% calc(100% - 2vh)
-  );
+    clip-path: polygon(calc(0% + 1vw) 0,
+        calc(100% - 0.33vw) 0,
+        calc(100% - 1vw) calc(100% - 2vh),
+        calc(var(--placement) + 15%) calc(100% - 2vh),
+        var(--placement) 100%,
+        calc(var(--placement) + 5%) calc(100% - 2vh),
+        0% calc(100% - 2vh));
   }
+
   25% {
-    clip-path: polygon(
-
-    calc(0% + 1vw) 3%, 
-    100% 0.33vw, 
-    calc(100% - 0.6vw) calc(95% - 2vh), 
-    calc(var(--placement) + 15%) calc(97.5% - 2vh), 
-    var(--placement) 100%,
-    calc(var(--placement) + 5%) calc(97.5% - 2vh), 
-    2% calc(100% - 2vh)
-  );
+    clip-path: polygon(calc(0% + 1vw) 3%,
+        100% 0.33vw,
+        calc(100% - 0.6vw) calc(95% - 2vh),
+        calc(var(--placement) + 15%) calc(97.5% - 2vh),
+        var(--placement) 100%,
+        calc(var(--placement) + 5%) calc(97.5% - 2vh),
+        2% calc(100% - 2vh));
   }
+
   75% {
-    clip-path: polygon(
-
-    calc(0% + 1vw) 3%, 
-    100% 0, 
-    calc(100% - 1vw) calc(100% - 2vh), 
-    calc(var(--placement) + 15%) calc(105% - 2vh), 
-    var(--placement) 100%,
-    calc(var(--placement) + 5%) calc(105% - 2vh), 
-    4% calc(110% - 2vh)
-  );
+    clip-path: polygon(calc(0% + 1vw) 3%,
+        100% 0,
+        calc(100% - 1vw) calc(100% - 2vh),
+        calc(var(--placement) + 15%) calc(105% - 2vh),
+        var(--placement) 100%,
+        calc(var(--placement) + 5%) calc(105% - 2vh),
+        4% calc(110% - 2vh));
   }
-  100% {
-    clip-path: polygon(
 
-    calc(0% + 1vw) 0, 
-    calc(100% - 0.33vw) 0, 
-    calc(100% - 1vw) calc(100% - 2vh), 
-    calc(var(--placement) + 15%) calc(100% - 2vh), 
-    var(--placement) 100%,
-    calc(var(--placement) + 5%) calc(100% - 2vh), 
-    0% calc(100% - 2vh)
-  );
+  100% {
+    clip-path: polygon(calc(0% + 1vw) 0,
+        calc(100% - 0.33vw) 0,
+        calc(100% - 1vw) calc(100% - 2vh),
+        calc(var(--placement) + 15%) calc(100% - 2vh),
+        var(--placement) 100%,
+        calc(var(--placement) + 5%) calc(100% - 2vh),
+        0% calc(100% - 2vh));
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
