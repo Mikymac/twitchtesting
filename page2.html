@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="cssTwo.css">
+</head>
+
+<script>
+    function random() {
+        let r = document.getElementsByClassName("message");
+        document.body.style.zoom = "90%";
+        for (let i = 0; i < r.length; i++) {
+            r[i].style.setProperty('--placement', String(Math.floor(Math.random() * 50) + 10) + '%');
+        }
+
+        function randomDelay(string) {
+
+        }
+    }
+
+</script>
+
+<body onload="random()">
+    <div class="main-container">
+        <div class="msg_overflow_fix">.</div>
+        <div class="msg mod" data-sender="2" data-msgid="3" id="msg-4">
+            <div class="meta">
+                <div class="name">EnpyModeratorA</div>
+            </div>
+            <div class="box--positioner green">
+                EnpyModerator
+                <div class="die_clipping_fix"><div></div></div>
+                <div class="box--container" style="animation: spin 100000s linear infinite; animation-delay: -25000s;">
+                    <div
+                        style="transform-style: preserve-3d; transform: translateX(20px) rotateZ(45deg) rotateY(45deg);">
+                        <div class="face face--front ">
+                            <div class="face face--pip"></div>
+                        </div>
+                        <div class="face face--front" style="--multiplier: -2">
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                        </div>
+                        <div class="face face--left">
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                        </div>
+                        <div class="face face--left" style="--multiplier: -2">
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                        </div>
+                        <div class="face face--top">
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                        </div>
+                        <div class="face face--top" style="--multiplier: -2">
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="message" style="animation: wobble 10s linear infinite; z-index: 2;">I really should have -->
+                added a much
+                longer
+                and multi-line message earlier in this process.
+            <!-- </div> -->
+        </div>
+        <div class="msg_overflow_fix"></div>
+        <div class="msg subscriber" data-sender="2" data-msgid="3" id="msg-4">
+            <div class="meta">
+                <div class="name">EnpySubscriberA</div>
+            </div>
+            <div class="box--positioner purple">
+                EnpySubscriber
+                <div class="box--container" style="animation: spin 20s linear infinite;">
+                    <div
+                        style="transform-style: preserve-3d; transform: translateX(20px) rotateZ(45deg) rotateY(45deg);">
+                        <div class="face face--front ">
+                            <div class="face face--pip"></div>
+                        </div>
+                        <div class="face face--front" style="--multiplier: -2">
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                        </div>
+                        <div class="face face--left">
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                        </div>
+                        <div class="face face--left" style="--multiplier: -2">
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                        </div>
+                        <div class="face face--top">
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                        </div>
+                        <div class="face face--top" style="--multiplier: -2">
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                            <div class="face face--pip"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="message" style="animation: wobble 10s linear infinite; z-index: 2;">I really should have
+                added a much
+                longer
+                and multi-line message earlier in this process.
+            </div>
+        </div>
+
+    </div>
+
+</body>
