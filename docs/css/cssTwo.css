@@ -8,6 +8,7 @@
     --vipCol: #22FF12;
     --modCol: #ea63e3;
     --txtCol: #eee;
+    --dieColour: white;
 }
 
 * {
@@ -214,7 +215,7 @@ body {
 
 .vip .meta {
     background: var(--vipCol);
-    --txtCol: var(--modCol);
+    --txtCol: var(--subCol);
     align-self: flex-end;
 }
 
@@ -308,7 +309,8 @@ body {
     transform-style: preserve-3d;
 }
 
-.mod .box--positioner {
+.mod .box--positioner,
+.vip .box--positioner {
     transform-origin: 100%;
     align-self: flex-end;
     align-content: flex-start;
@@ -335,11 +337,12 @@ body {
     left: calc(var(--dimension)/2);
 
     /* animation: spin 10s linear infinite; */
-    left: 108%;
+    left: 110%;
 }
 
-.mod .box--container {
-    left: -8%;
+.mod .box--container,
+.vip .box--container {
+    left: -12%;
 }
 
 .face {
