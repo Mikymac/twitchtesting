@@ -7,6 +7,7 @@
     --subCol: #22FF12;
     --vipCol: #22FF12;
     --modCol: #ea63e3;
+    --txtCol: #eee;
 }
 
 * {
@@ -32,7 +33,6 @@ body {
     height: 100%;
     box-sizing: border-box;
     overflow: visible;
-    width: 45%;
     background: #fdc71c;
 }
 
@@ -75,16 +75,19 @@ body {
 }
 
 .name {
+
+    -webkit-text-stroke: 0.5px var(--txtCol);
     color: #101010;
     text-transform: uppercase;
     width: fit-content;
-    font-weight: 400;
+    font-weight: 100;
     font-size: 24px;
     line-height: 22px;
     margin-bottom: 2px;
     max-width: 375px;
     text-overflow: ellipsis;
     transform: translateZ(50px);
+    --textVal: attr();
 }
 
 
@@ -168,7 +171,7 @@ body {
 
 .subscriber .meta {
     background: var(--subCol);
-    -webkit-text-stroke: 0.78px var(--subCol);
+    --txtCol: var(--subCol);
 }
 
 .subscriber .meta::after {
@@ -186,8 +189,8 @@ body {
 
 .mod .meta {
     background: var(--modCol);
-    -webkit-text-stroke: 0.78px var(--modCol);
     align-self: flex-end;
+    --txtCol: var(--modCol);
 }
 
 .mod .meta::after {
@@ -211,7 +214,7 @@ body {
 
 .vip .meta {
     background: var(--vipCol);
-    -webkit-text-stroke: 0.78px var(--vipCol);
+    --txtCol: var(--modCol);
     align-self: flex-end;
 }
 
@@ -236,7 +239,7 @@ body {
 
 .vip2 .meta {
     background: #fd975c;
-    -webkit-text-stroke: 0.78px #fd975c;
+    --txtCol: #fd975c;
     align-self: flex-end;
 }
 
@@ -290,30 +293,34 @@ body {
 }
 
 .box--positioner {
-    transform-origin: center;
+    transform-origin: 0%;
     scale: .7;
-    align-self: flex-end;
+    align-self: flex-start;
+    align-content: flex-end;
     position: absolute;
     padding: 2px 15px;
-    transform: translateX(-55%) translateY(7px);
-    overflow: visible;
     color: transparent;
     background-color: transparent;
     text-transform: uppercase;
-    width: fit-content;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 22px;
-    margin-bottom: 2px;
-    max-width: 375px;
+    font-size: calc(24px / 0.7);
+    line-height: calc(22px / 0.7);
     transform-style: preserve-3d;
 }
 
-.subscriber .box--positioner {
-    align-self: flex-start;
-    position: absolute;
-    transform: translateX(55%) translateY(7px);
+.mod .box--positioner {
+    transform-origin: 100% ;
+    align-self: flex-end;
+    align-content: flex-start;
 }
+
+.follower .name::after, .subscriber .name::after {
+    content: "  ";
+}
+
+.mod .name::before, .vip .name::before {
+    content: "  ";
+}
+
 
 .box--container {
     --dimension: 40px;
@@ -324,21 +331,11 @@ body {
     left: calc(var(--dimension)/2);
 
     animation: spin 10s linear infinite;
+    left: 108%;
 }
 
-.subscriber .box--container {
-    left: calc(100% - (var(--dimension)/2));
-}
-
-.die_clipping_fix {
-    position: absolute;
-    transform-origin: 0% 0%;
-    width: 50px;
-    height: 50px;
-    animation: inherit;
-    animation-direction: reverse;
-    content: 'asdf';
-    transition: translateZ(-100px);
+.mod .box--container {
+    left: -8%;
 }
 
 .face {
@@ -353,26 +350,26 @@ body {
     align-self: center;
     justify-self: center;
     position: absolute;
-    transform-style: preserve-3d;    
+    transform-style: preserve-3d;
     display: block;
 }
 
-/* .face:last-child:before {    
-    position: relative;
-    transform: translateX(-10%) translateY(-10%);
-    width: var(--dimension);
-    height: var(--dimension);
+.face::after {
+    position: absolute;
+    transform-style: preserve-3d;
+    width: calc(var(--dimension) - 1px);
+    height: calc(var(--dimension) - 1px);
     border-radius: 13%;
-    background-color: blueviolet;
-    position: unset;
-    content:''; 
-    transform: translateZ(1px); 
-} */
+    background-color: var(--dieColour);
+    /* background-color: blueviolet; */
+    content: '';
+    transform: translateZ(calc(-0.05px * var(--multiplier))) translate(calc(1px + var(--dimension) / calc(-6 * abs(var(--multiplier)))), calc(1px + var(--dimension) / calc(-6 * abs(var(--multiplier)))));
+}
 
-el .face{
+.face el {
     width: var(--dimension);
     height: var(--dimension);
-    position: inherit;
+    position: absolute;
     display: grid;
     /* opacity: .3; */
     grid-template-areas:
@@ -384,7 +381,8 @@ el .face{
         ". d . . . b ."
         ". . . . . . .";
     grid-template-rows: repeat(7, 1fr);
-    grid-template-columns: repeat(7, 1fr);     
+    grid-template-columns: repeat(7, 1fr);
+    transform: translate(calc(var(--dimension) / -12), calc(var(--dimension) / -12));
 }
 
 .face--front {
